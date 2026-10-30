@@ -1,4 +1,4 @@
-package cursoja.executaveis;
+package cursoja.classes;
 
 import java.util.Objects;
 
@@ -64,6 +64,14 @@ public class Disciplina {
 	}
 	
 	
+	
+	
+	@Override
+	public String toString() {
+		return "Disciplina [nota1=" + nota1 + ", disciplina1=" + disciplina1 + ", nota2=" + nota2 + ", disciplina2="
+				+ disciplina2 + ", nota3=" + nota3 + ", disciplina3=" + disciplina3 + ", nota4=" + nota4
+				+ ", disciplina4=" + disciplina4 + "]";
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(disciplina1, disciplina2, disciplina3, disciplina4, Double.valueOf(nota1),
