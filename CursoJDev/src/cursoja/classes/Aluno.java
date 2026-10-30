@@ -1,6 +1,9 @@
 package cursoja.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 
 public class Aluno {
 	private String nome;
@@ -13,12 +16,34 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
+	private  List<Disciplina> disciplina = new ArrayList<Disciplina>();
 	
 	
 	/*Metodos*/
 	
+	public double mediaNota() {
+		return (disciplina.getNota1() +disciplina.getNota2()+disciplina.getNota3()+disciplina.getNota4())/4;
+	}
+	public void alunoAprovado() {
+		double media= this.mediaNota();
+		if(media>=70) {
+			System.out.println("Aprovado por média igual ou superior a 70");
+		}else if(media>50 && media<70 ) {
+			System.out.println("Recuperação por media superior a 50 e inferior a 70");
+		}else {
+			System.out.println("Reprovador por media inferior a 50 ");
+		}
+	}
+	
 	
 	/*Getters e Setter*/
+
+	public void setDisciplina(List<Disciplina> disciplina) {
+		this.disciplina = disciplina;
+	}
+	public List<Disciplina> getDisciplina() {
+		return disciplina;
+	}
 	public String getNome() {
 		return nome;
 	}
